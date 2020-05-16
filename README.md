@@ -1,24 +1,8 @@
-# Announcement
-
-Beberapa file yang harus ada dalam repositori tersebut diantaranya:
-* Direktori src yang berisi source code yang anda buat.
-* File output yang berisi hasil uji dijkstra algorithm pada data uji.
-* Makefile. Buatlah sehingga kompilasi program dapat dilakukan hanya dengan pemanggilan command ’make’ saja.
-* File README.md yang berisi:
-    * Petunjuk penggunaan program.
-    * Pembagian tugas. Sampaikan dalam list pengerjaan untuk setiap mahasiswa. Sebagai contoh: XXXX mengerjakan fungsi YYYY, ZZZZ, dan YYZZ.
-    * Laporan pengerjaan, dengan struktur laporan sesuai dengan deskripsi pada bagian sebelumnya.
-
-
 # I. Petunjuk penggunaan program
     mpicc dijkstra.c -o [nama executable program]
     mpirun -np [process] [nama executable program] [jumlah node: 100, 500, 1000, 3000]
-
-# II. Pembagian tugas
-*  13517008 mengerjakan fungsi chooseNode, dijkstra
-*  13517143 mengerjakan fungsi initGraf, initGraf2, initGraf3, printGraf, randomNumber, free2dint, main program
-
-# III. Laporan pengerjaan
+    
+# II. Laporan pengerjaan
 1.  Deskripsi solusi paralel<br/>
     Solusi yang digunakan adalah dengan menggunakan MPI Scatter yang akan membagi semua node dengan jumlah size processor yang digunakan misal ada 100 
     node maka processor yang dibutuhkan adalah bilangan yang bisa membagi habis 100 node tersebut, kemudian graph matriks awal dibroadcast ke semua process menggunakan MPI Broadcast dan hasil dijkstra dari setiap process dikumpulkan dengan menggunakan MPI Gather.
